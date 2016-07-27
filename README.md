@@ -1,3 +1,5 @@
+_Based on the lovely codebase by_ [legion0](https://github.com/legion0/dotfiles)
+
 Setup Instructions:
 
 
