@@ -5,7 +5,7 @@ Setup Instructions:
 
 cd /tmp
 
-git clone https://github.com/legion0/dotfiles.git
+git clone https://github.com/hemulin/dotfiles.git
 
 cp -r dotfiles/.git ~/
 
