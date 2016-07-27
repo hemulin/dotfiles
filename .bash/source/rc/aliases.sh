@@ -25,4 +25,19 @@ if [ -x /usr/bin/dircolors ]; then
 
   # enable color support for less
   alias less='less -R'
+
+  #Check battery status
+  alias batstat='upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep -E "percentage|time to full|time to empty|state"'
+
+  #ping google
+  alias pingg='ping -c 5 8.8.8.8'
+
+  # human readable file sizes
+  alias lk='ls --color=auto --block-size=k -lha'
+  alias lm='ls --color=auto --block-size=m -lha'
+
+  # xclip utility
+  # use like cat to_be_copied.txt | clip
+  alias clip='xclip -selection clipboard'
+
 fi
