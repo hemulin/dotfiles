@@ -28,7 +28,8 @@ if [ -x /usr/bin/dircolors ]; then
 
   #Check battery status
   alias batstat='upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep -E "percentage|time to full|time to empty|state"'
-
+  alias bs='upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep -E "percentage|time to full|time to empty|state"'
+  
   #ping google
   alias pingg='ping -c 5 8.8.8.8'
 
@@ -39,5 +40,13 @@ if [ -x /usr/bin/dircolors ]; then
   # xclip utility
   # use like cat to_be_copied.txt | clip
   alias clip='xclip -selection clipboard'
+
+  alias cc=countChars
+
+  # Functions
+  countChars() {
+	echo "Chars count in $1:"
+    echo -n $1 | wc -c
+  }
 
 fi
