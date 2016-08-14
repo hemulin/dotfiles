@@ -43,6 +43,18 @@ if [ -x /usr/bin/dircolors ]; then
 
   alias cc=countChars
 
+  # Show contents of /etc/resolv.conf
+  alias as='cat /etc/resolv.conf'
+
+  #start xscreensaver
+  alias xs='xscreensaver-command -lock'
+  
+  # find self external ip
+  alias selfip='wget http://ipinfo.io/ip -qO -'
+
+  # find self geo location
+  alias geo='echo "Looking for self ip geolocation" && curl -s ipinfo.io/"$(wget http://ipinfo.io/ip -qO -)" | egrep -w "city|region|country"'
+
   # Functions
   countChars() {
 	echo "Chars count in $1:"
