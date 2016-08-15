@@ -46,6 +46,12 @@ if [ -x /usr/bin/dircolors ]; then
   # Show contents of /etc/resolv.conf
   alias as='cat /etc/resolv.conf'
 
+  # Set Airvpn active via stunnel and openvpn (requires sudo)
+  alias aon='(cd /home/hemulin/apps/vpn/airvpn && sudo ./airvpn_toggler.py on)'
+  
+  # Set Airvpn off (requires sudo)
+  alias aoff='sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py off'
+
   #start xscreensaver
   alias xs='xscreensaver-command -lock'
   
