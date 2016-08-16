@@ -36,6 +36,7 @@ if [ -x /usr/bin/dircolors ]; then
   # human readable file sizes
   alias lk='ls --color=auto --block-size=k -lha'
   alias lm='ls --color=auto --block-size=m -lha'
+  alias lh='ls -lha --block-size=k -d .*'
 
   # xclip utility
   # use like cat to_be_copied.txt | clip
@@ -44,10 +45,10 @@ if [ -x /usr/bin/dircolors ]; then
   alias cc=countChars
 
   # Show contents of /etc/resolv.conf
-  alias as='cat /etc/resolv.conf'
+  alias as='cat /etc/resolv.conf && echo ""'
 
   # Set Airvpn active via stunnel and openvpn (requires sudo)
-  alias aon='(cd /home/hemulin/apps/vpn/airvpn && sudo ./airvpn_toggler.py on)'
+  alias aon='sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py on'
   
   # Set Airvpn off (requires sudo)
   alias aoff='sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py off'
@@ -61,10 +62,18 @@ if [ -x /usr/bin/dircolors ]; then
   # find self geo location
   alias geo='echo "Looking for self ip geolocation" && curl -s ipinfo.io/"$(wget http://ipinfo.io/ip -qO -)" | egrep -w "city|region|country"'
 
+  # find given ip geo location
+  alias geo2=geoLocate
+
   # Functions
   countChars() {
 	echo "Chars count in $1:"
     echo -n $1 | wc -c
+  }
+
+  geoLocate() {
+	echo "Looking for $1 geolocation:"
+    curl -s ipinfo.io/$1 | egrep -w "city|region|country"
   }
 
 fi
