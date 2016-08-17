@@ -37,7 +37,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias lk='ls --color=auto --block-size=k -lha'
   alias lm='ls --color=auto --block-size=m -lha'
   alias lh='ls -lha --block-size=k -d .*'
-
+ 
   # xclip utility
   # use like cat to_be_copied.txt | clip
   alias clip='xclip -selection clipboard'
@@ -64,6 +64,9 @@ if [ -x /usr/bin/dircolors ]; then
 
   # find given ip geo location
   alias geo2=geoLocate
+
+  # test connection speed
+  alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
   # Functions
   countChars() {
