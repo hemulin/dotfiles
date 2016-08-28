@@ -68,6 +68,12 @@ if [ -x /usr/bin/dircolors ]; then
   # test connection speed
   alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
+  # set huawei netstick on
+  alias netstick='sudo usb_modeswitch -J -v 0x12d1 -p 0x1446' 
+
+  # watch the last lines of the dmesg stream
+  alias wdmesg='watch "dmesg | tail -n 20"'
+
   # Functions
   countChars() {
 	echo "Chars count in $1:"

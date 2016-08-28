@@ -53,3 +53,13 @@ if which tmux >/dev/null 2>&1; then
     test -z "$TMUX" && tmux -u new-session
 fi
 
+# Set bash mode as vi on new bash instance
+set -o vi
+
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=10000                   # big big history
+export HISTFILESIZE=10000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+
+# Save and reload the history after each command finishes
+#export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
