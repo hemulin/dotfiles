@@ -74,15 +74,25 @@ if [ -x /usr/bin/dircolors ]; then
   # watch the last lines of the dmesg stream
   alias wdmesg='watch "dmesg | tail -n 20"'
 
+  # run vscode as sudoer
+  alias scode='sudo code --user-data-dir=/home/hemulin/data-dir .'
+
+  # htop to watch pids of specific program
+  alias htop_watch=htopp
+
   # Functions
   countChars() {
-	echo "Chars count in $1:"
+	echo "Chars count in input:"
     echo -n $1 | wc -c
   }
 
   geoLocate() {
 	echo "Looking for $1 geolocation:"
     curl -s ipinfo.io/$1 | egrep -w "city|region|country"
+  }
+
+  htopp() {
+   htop -p $(pgrep $1 | xargs echo | sed 's/ /,/g')
   }
 
 fi
