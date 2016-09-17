@@ -37,6 +37,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias lk='ls --color=auto --block-size=k -lha'
   alias lm='ls --color=auto --block-size=m -lha'
   alias lh='ls -lha --block-size=k -d .*'
+  alias ld='ll -d */'
  
   # xclip utility
   # use like cat to_be_copied.txt | clip
@@ -47,11 +48,8 @@ if [ -x /usr/bin/dircolors ]; then
   # Show contents of /etc/resolv.conf
   alias as='cat /etc/resolv.conf && echo ""'
 
-  # Set Airvpn active via stunnel and openvpn (requires sudo)
-  alias aon='sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py on'
-  
-  # Set Airvpn off (requires sudo)
-  alias aoff='sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py off'
+  # Toggle Airvpn status using stunnel and openvpn (requires sudo)
+  alias at=toggleAirvpn
 
   #start xscreensaver
   alias xs='xscreensaver-command -lock'
@@ -81,6 +79,13 @@ if [ -x /usr/bin/dircolors ]; then
   alias htop_watch=htopp
 
   # Functions
+  toggleAirvpn() {
+	cwd=$(pwd)
+    cd /home/hemulin/apps/vpn/airvpn
+    sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py $1
+    cd $cwd
+  }
+
   countChars() {
 	echo "Chars count in input:"
     echo -n $1 | wc -c
@@ -92,7 +97,9 @@ if [ -x /usr/bin/dircolors ]; then
   }
 
   htopp() {
-   htop -p $(pgrep $1 | xargs echo | sed 's/ /,/g')
+	PIDS=$(pgrep $1 | xargs echo | sed 's/ /,/g')
+    echo "htop is watching the following $1 pids: $PIDS"
+	htop -p $PIDS
   }
 
 fi
