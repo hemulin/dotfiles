@@ -82,7 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
   toggleAirvpn() {
 	cwd=$(pwd)
     cd /home/hemulin/apps/vpn/airvpn
-    sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py $1
+    sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py ${1:-on} ${2:-''}
     cd $cwd
   }
 
