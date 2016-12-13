@@ -70,7 +70,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias netstick='sudo usb_modeswitch -J -v 0x12d1 -p 0x1446' 
 
   # watch the last lines of the dmesg stream
-  alias wdmesg='watch "dmesg | tail -n 20"'
+  alias wdmesg='watch -n1 "dmesg | tail -n 20"'
 
   # run vscode as sudoer
   alias scode='sudo code --user-data-dir=/home/hemulin/data-dir .'
@@ -82,7 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
   toggleAirvpn() {
 	cwd=$(pwd)
     cd /home/hemulin/apps/vpn/airvpn
-    sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py ${1:-on} ${2:-''}
+    sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py ${1:-on} ${2:-show}
     cd $cwd
   }
 
