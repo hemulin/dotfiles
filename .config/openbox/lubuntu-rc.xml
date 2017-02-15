@@ -327,6 +327,9 @@
     <keybind key="C-W-Up">        # FullScreen
       <action name="Maximize"/>
     </keybind>
+	<keybind key="C-W-Down">        # Minimize
+      <action name="Iconify"/>
+    </keybind>
     <keybind key="W-Left">        # HalfLeftScreen
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"><x>0</x><y>0</y><height>100%</height><width>50%</width></action>
