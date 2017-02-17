@@ -13,7 +13,7 @@
 	fe = fetch
 	cp = cherry-pick
 	ls = log --pretty=oneline --abbrev-commit --graph --decorate
-    lsa = log --all --pretty=oneline --abbrev-commit --graph --decorate
+        lsa = log --all --pretty=oneline --abbrev-commit --graph --decorate
 	la = log --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%ai%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''        %C(white)%s%C(reset) %C(bold white)[%an]%C(reset)' --graph
 	lc = log --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%ci%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n''        %C(white)%s%C(reset) %C(bold white)[%cn]%C(reset)' --graph
 	ll = log --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%ai%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(bold white)[%an]%C(reset)' -M --graph --name-status
