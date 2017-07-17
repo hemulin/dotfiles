@@ -20,7 +20,8 @@
 	la = log --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%ai%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''        %C(white)%s%C(reset) %C(bold white)[%an]%C(reset)' --graph
 	lc = log --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%ci%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n''        %C(white)%s%C(reset) %C(bold white)[%cn]%C(reset)' --graph
 	ll = log --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%ai%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(bold white)[%an]%C(reset)' -M --graph --name-status
-	ignore = !git update-index --assume-unchanged 
+	del = !sh -c 'git branch -D $1 && git push origin :$1' -
+    ignore = !git update-index --assume-unchanged 
     unignore = !git update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep ^[a-z]
     diff-staged = diff --staged -M
