@@ -45,6 +45,9 @@ if [ -x /usr/bin/dircolors ]; then
 
   alias cc=countChars
 
+  # Stopwatch
+  alias timer='echo "Timer started. Stop with Ctrl-C." && date && time cat && date'
+
   # Show contents of /etc/resolv.conf
   alias as='cat /etc/resolv.conf && echo ""'
 
