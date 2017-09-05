@@ -13,6 +13,8 @@
 	co = checkout
 	ci = commit
 	st = status
+	del = !sh -c 'git branch -D $1 && git push origin :$1' -
+	br = !git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(    color:reset)'|column -ts'|'
 	fe = fetch
 	cp = cherry-pick
 	ls = log --pretty=oneline --abbrev-commit --graph --decorate
