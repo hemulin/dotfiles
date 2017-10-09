@@ -26,6 +26,7 @@
     ignore = !git update-index --assume-unchanged 
     unignore = !git update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep ^[a-z]
+    fetch-all = "!for remote in $(git branch -r); do git branch --track ${remote#origin/} $remote; done"
     diff-staged = diff --staged -M
 	diff-last = diff --cached -M HEAD~
 	diff = diff -M
