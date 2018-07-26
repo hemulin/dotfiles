@@ -29,7 +29,7 @@ if [ -x /usr/bin/dircolors ]; then
   #Check battery status
   alias batstat='upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep -E "percentage|time to full|time to empty|state"'
   alias bs='upower -d | grep -E "battery|mouse|keyboard|percentage|time to full|time to empty|state"'
-  
+
   #ping google
   alias pingg='ping -c 5 8.8.8.8'
 
@@ -38,7 +38,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias lm='ls --color=auto --block-size=m -lha'
   alias lh='ls -lha --block-size=k -d .*'
   alias ld='ll -d */'
- 
+
   # xclip utility
   # use like cat to_be_copied.txt | clip
   alias clip='xclip -selection clipboard'
@@ -56,7 +56,7 @@ if [ -x /usr/bin/dircolors ]; then
 
   #start xscreensaver
   alias xs='xscreensaver-command -lock'
-  
+
   # find self external ip
   alias selfip='wget http://ipinfo.io/ip -qO -'
 
@@ -70,7 +70,7 @@ if [ -x /usr/bin/dircolors ]; then
   alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
   # set huawei netstick on
-  alias netstick='sudo usb_modeswitch -J -v 0x12d1 -p 0x1446' 
+  alias netstick='sudo usb_modeswitch -J -v 0x12d1 -p 0x1446'
 
   # watch the last lines of the dmesg stream
   alias wdmesg='watch -n1 "dmesg | tail -n 20"'
@@ -81,11 +81,13 @@ if [ -x /usr/bin/dircolors ]; then
   # htop to watch pids of specific program
   alias htop_watch=htopp
 
+  alias bt='python ~/.bash/headset_bt.py'
+
   # Functions
   toggleAirvpn() {
 	cwd=$(pwd)
-    cd /home/hemulin/apps/vpn/airvpn
-    sudo /home/hemulin/apps/vpn/airvpn/airvpn_toggler.py ${1:-on} ${2:-show}
+    cd /home/hemulin/vpn/airvpn
+    sudo /home/hemulin/vpn/airvpn/airvpn_toggler.py ${1:-on} ${2:-show}
     cd $cwd
   }
 
