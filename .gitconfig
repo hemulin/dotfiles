@@ -14,7 +14,7 @@
 	ci = commit
 	st = status
 	del = !sh -c 'git branch -D $1 && git push origin :$1' -
-	br = !git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'|column -ts'|'
+	br = !git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject) %(color:bold green)- %(color:magenta)%(authorname)%(color:reset)' --color=always|column -ts'|'
 	fe = fetch
 	cp = cherry-pick
 	ls = log --pretty=oneline --abbrev-commit --graph --decorate
@@ -23,7 +23,7 @@
 	lc = log --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%ci%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n''        %C(white)%s%C(reset) %C(bold white)[%cn]%C(reset)' --graph
 	ll = log --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%ai%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(bold white)[%an]%C(reset)' -M --graph --name-status
 	del = !sh -c 'git branch -D $1 && git push origin :$1' -
-    ignore = !git update-index --assume-unchanged 
+    ignore = !git update-index --assume-unchanged
     unignore = !git update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep ^[a-z]
     fetch-all = "!for remote in $(git branch -r); do git branch --track ${remote#origin/} $remote; done"
