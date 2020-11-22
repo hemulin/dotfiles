@@ -43,7 +43,7 @@ if [ -x /usr/bin/dircolors ]; then
   # use like cat to_be_copied.txt | clip
   alias clip='xclip -selection clipboard'
 
-  alias cc=countChars
+  alias count=countChars
 
   # Stopwatch
   alias timer='echo "Timer started. Stop with Ctrl-C." && date && time cat && date'
